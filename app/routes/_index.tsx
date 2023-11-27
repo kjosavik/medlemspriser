@@ -19,10 +19,12 @@ export default function Index() {
   const discounts = useLoaderData<Array<Discount>>();
 
   return (
-    <div className="h-screen bg-gradient-to-b from-5% from-mp-turquoise to-mp-blue grid grid-cols-3">
-      {discounts.map((discount) => (
-        <DiscountCard key={discount.id} discount={discount}></DiscountCard>
-      ))}
+    <div className="h-full bg-gradient-to-b from-5% from-mp-turquoise to-mp-blue p-10">
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {discounts.map((discount) => (
+          <DiscountCard key={discount.id} discount={discount}></DiscountCard>
+        ))}
+      </ul>
     </div>
   );
 }
